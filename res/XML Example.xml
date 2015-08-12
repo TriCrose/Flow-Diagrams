@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main start="0">
+	<box type="input" command="Input S0" id="0" nextBox="1" />
+	<box type="output" command="Output S0" id="1" nextBox="2" />
+	<box type="process" command="S2 -= 0x42" id="2" nextBox="3" />
+	<box type="decision" command="S7 > 0x0D?" id="3" nextBox="4" yesBox="10" />
+	<box type="end" id="10" />
+	<box type="adc" command="Read ADC, S0" id="4" nextBox="5" />
+	<box type="break" command="Break 0x01" id="5" nextBox="6" />
+	<box type="subroutine" command="doStuff()" id="6" nextBox="7" />
+	<box type="end" id="7" />
+</main>
+<sub name="doStuff" start="0">
+	<box type="input" command="Input S0" id="0" nextBox="1" />
+	<box type="output" command="Output S0" id="1" nextBox="2" />
+	<box type="process" command="S2 -= 0x42" id="2" nextBox="3" />
+	<box type="decision" command="S7 > 0x0D?" id="3" nextBox="4" yesBox="10" />
+	<box type="return" id="10" />
+	<box type="adc" command="Read ADC, S0" id="4" nextBox="5" />
+	<box type="break" command="Break 0x01" id="5" nextBox="6" />
+	<box type="subroutine" command="doStuff2()" id="6" nextBox="7" />
+	<box type="return" id="7" />
+</sub>
+<sub name="doStuff2" start="0">
+	<box type="input" command="Input S0" id="0" nextBox="1" />
+	<box type="output" command="Output S0" id="1" nextBox="2" />
+	<box type="process" command="S5 = S3 AND 0x42" id="2" nextBox="3" />
+	<box type="decision" command="S7 > 0x0D?" id="3" nextBox="4" yesBox="10" />
+	<box type="return" id="10" />
+	<box type="adc" command="Read ADC, S0" id="4" nextBox="5" />
+	<box type="break" command="Break 0x01" id="5" nextBox="6" />
+	<box type="subroutine" command="doStuff()" id="6" nextBox="7" />
+	<box type="return" id="7" />
+</sub>
