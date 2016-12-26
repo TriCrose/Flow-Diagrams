@@ -1,5 +1,5 @@
 # Flow-Diagrams
-Simple UI for Designing Flow Diagrams
+Simple flow diagram UI for use with CC's software
 
 This software allows you to create a flow diagram for a program designed to run on the PIC16F876/876A/886 microcontroller. Once the flow diagram is created, it can be exported to an XML file, which can then be programmed directly onto the hardware using Chris Claire's software.
 
